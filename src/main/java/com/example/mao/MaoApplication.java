@@ -1,4 +1,4 @@
-package com.mao;
+package com.example.mao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

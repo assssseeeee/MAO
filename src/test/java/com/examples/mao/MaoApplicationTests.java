@@ -1,4 +1,4 @@
-package com.mao;
+package com.examples.mao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
