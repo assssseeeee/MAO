@@ -2,7 +2,7 @@ package com.example.beans;
 
 public enum Role {
 
-	ADMIN(1), PRODUCTION_DEPARTMENT(2), LABORATORY_DEPARTMENT(3);
+	ADMIN(1), PRODUCTION_DEPARTMENT(2), LABORATORY_DEPARTMENT(3), SERVICE_DESK(4), NO_PERMISSIONS(100);
 	
 	private Role(int id) {
 		this.id = id;
@@ -14,28 +14,30 @@ public enum Role {
 		return id;
 	}
 
-	public int setId(int id){
+	public void setId(int id){
 		this.id = id;
 	}
 	
 	public static Role getRole(int id) {
+
 		switch (id) {
 		case 1:
 			return ADMIN;
-			break;
+		
 		case 2:
 			return PRODUCTION_DEPARTMENT;
-			break;
-			
+
 		case 3:
 			return LABORATORY_DEPARTMENT;
 			
-			break;
+		case 4:
+			return SERVICE_DESK;
+		case 100:
+			return NO_PERMISSIONS;
+			
 		default:
-			System.out.println("Role not found");
-			break;
+			throw new IllegalArgumentException("Role not found");
+			
 		}
-		
 	}
-
 }
