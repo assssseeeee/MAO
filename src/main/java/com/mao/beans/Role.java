@@ -1,4 +1,4 @@
-package com.example.beans;
+package com.mao.beans;
 
 public enum Role {
 
