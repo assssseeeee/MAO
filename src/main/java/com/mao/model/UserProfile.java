@@ -2,20 +2,22 @@ package com.mao.model;
 
 import java.io.Serializable;
 
-
-
-
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-
+@Table(name="users")
 public class UserProfile implements Serializable{
-	
-	@Id @Generated(strategy=GenerationType.IDENTITY)
+
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;	
 
-	@Column(name="TYPE", length=15, unique=true, nullable=false)
-	private String type = UserProfileType.USER.getUserProfileType();
+	@Column(name="user_role", length=15, unique=true, nullable=false)
+	private String type = UserProfileType.users.getUserProfileType();
 	
 	public Integer getId() {
 		return id;
@@ -68,4 +70,8 @@ public class UserProfile implements Serializable{
 	public String toString() {
 		return "UserProfile [id=" + id + ", type=" + type + "]";
 	}
+
+
+
+
 }
