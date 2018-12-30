@@ -17,7 +17,7 @@ public class UserProfile implements Serializable{
 	private Integer id;	
 
 	@Column(name="user_role", length=15, unique=true, nullable=false)
-	private String type = UserProfileType.users.getUserProfileType();
+	private String type = UserProfileType.USER.getUserProfileType();
 	
 	public Integer getId() {
 		return id;
